@@ -1,8 +1,16 @@
 document.getElementById("myForm").onsubmit = validate;
 
+function clearErrors() {
+    let errors = document.getElementsByClassName("error");
+    for (let i=0; i<errors.length; i++) {
+        errors[i].classList.add("error");
+    }
+}
+
 function validate() {
 
     let isValid = true;
+    clearErrors();
 
     let name = document.getElementById("firstName").value;
     if (name === null || name === "") {
